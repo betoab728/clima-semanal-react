@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useFecha } from '../utils/UseFecha';
 
-import clear from '../assets/Clear.jpg';
-import rain from '../assets/Rainy.jpg';
-import snow from '../assets/snow.jpg';
-import clouds from '../assets/Cloudy.jpg';
-import fog from '../assets/fog.png';
-import storm from '../assets/Stormy.jpg';
-import sun from '../assets/Sunny.jpg';
+import rain from '../assets/iconos/rain.png';
+import snow from '../assets/iconos/snow.png';
+import clouds from '../assets/iconos/cloud.png';
+import fog from '../assets/iconos/fog.png';
+import storm from '../assets/iconos/storm.png';
+import sun from '../assets/iconos/sun.png';
+import wind from '../assets/iconos/windy.png';
 
 const Tarjeta = ({
     temperature,
@@ -18,14 +18,14 @@ const Tarjeta = ({
     iconString,
     conditions,
 }) => {
-    const [image, setImage] = useState(clear);
+    const [image, setImage] = useState(sun);
     const { time } = useFecha();
 
     useEffect(() => {
         if (iconString) {
             const lowerCaseIcon = iconString.toLowerCase();
-            if (lowerCaseIcon.includes('clear')) {
-                setImage(clear);
+            if (lowerCaseIcon.includes('wind')) {
+                setImage(wind);
             } else if (lowerCaseIcon.includes('rain') || lowerCaseIcon.includes('drizzle')) {
                 setImage(rain);
             } else if (lowerCaseIcon.includes('snow')) {

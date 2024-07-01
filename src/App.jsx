@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import search from './assets/search.svg';
+import search from './assets/iconos/search.svg';
 import { Fondo, Tarjeta, MiniTarjeta } from './componentes';
 import { useClimaContext } from './contexto';
 
@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="w-full h-screen text-white px-8">
       <nav className="w-full p-3 flex justify-between items-center">
-        <h1 className="font-bold tracking-wide text-3xl">Pronóstico del clima</h1>
+        <h1 className="font-bold tracking-wide text-3xl text-orange-600">Pronóstico del clima</h1>
         <div className="bg-white w-[15rem] overflow-hidden shadow-2xl rounded flex items-center p-2 gap-2">
           <img className="w-[1.5rem] h-[1.5rem] " src={search} alt="search" />
           <input
@@ -42,12 +42,14 @@ function App() {
               }
             }}
             type="text"
-            placeholder="Buscar.."
+            placeholder="Ciudad.."
             className="focus:outline-none w-full text-[#212121] text-lg"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
+         <button onClick={submitCity} className="bg-blue-600 text-[#ffff] px-4 py-2 rounded-lg">Buscar </button>
         </div>
+       
       </nav>
       <Fondo></Fondo>
       <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center">

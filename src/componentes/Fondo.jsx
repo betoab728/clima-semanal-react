@@ -1,12 +1,12 @@
 import { useClimaContext } from '../contexto';
 import { useState, useEffect } from 'react';
-import clear from '../assets/Clear.jpg';
-import rain from '../assets/Rainy.jpg';
-import snow from '../assets/snow.jpg';
-import clouds from '../assets/Cloudy.jpg';
-import fog from '../assets/fog.png';
-import storm from '../assets/Stormy.jpg';
-import sun from '../assets/Sunny.jpg';
+import clear from '../assets/imagenes/Clear.jpg';
+import rain from '../assets/imagenes/Rainy.jpg';
+import snow from '../assets/imagenes/snow.jpg';
+import clouds from '../assets/imagenes/Cloudy.jpg';
+import fog from '../assets/imagenes/fog.png';
+import storm from '../assets/imagenes/Stormy.jpg';
+import sun from '../assets/imagenes/Sunny.jpg';
 
 const Fondo = () => {
   const { clima } = useClimaContext();
@@ -34,7 +34,7 @@ const Fondo = () => {
   }, [clima]);
 
   return (
-    <img src={image} alt="imagen clima" className='h-screen w-full fixed left-0 top-0 -z-[10]' />
+    <img src={image} alt="imagen del clima" className='h-screen w-full fixed left-0 top-0 -z-[10]' />
   );
 };
 
