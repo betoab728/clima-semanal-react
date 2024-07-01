@@ -12,6 +12,29 @@ const MiniTarjeta = ({ time, tempe, iconString }) => {
   const [icon, setIcon] = useState('');
   const [weekday, setWeekday] = useState('');
 
+  //para traducir el dia de la semana
+
+  const translateDayOfWeek = (dayOfWeek) => {
+    switch (dayOfWeek.toLowerCase()) {
+      case 'monday':
+        return 'Lunes';
+      case 'tuesday':
+        return 'Martes';
+      case 'wednesday':
+        return 'Miércoles';
+      case 'thursday':
+        return 'Jueves';
+      case 'friday':
+        return 'Viernes';
+      case 'saturday':
+        return 'Sábado';
+      case 'sunday':
+        return 'Domingo';
+      default:
+        return dayOfWeek; // Si el día no coincide con ninguno de los anteriores, devuelve el original
+    }
+  };
+
   useEffect(() => {
     if (iconString) {
       if (iconString.toLowerCase().includes('clear')) {
@@ -41,7 +64,7 @@ const MiniTarjeta = ({ time, tempe, iconString }) => {
 
   return (
     <div className="glassCard w-[10rem] h-[10rem] p-4 flex flex-col">
-      <p className="text-center">{weekday}</p>
+      <p className="text-center">{ translateDayOfWeek(weekday)}</p>
       <hr />
       <div className="w-full flex justify-center items-center flex-1">
         <img src={icon} alt="Icono del clima" className="w-[4rem] h-[4rem]" />
