@@ -31,10 +31,11 @@ function App() {
 
   return (
     <div className="w-full h-screen text-white px-8">
-      <nav className="w-full p-3 flex justify-between items-center">
-        <h1 className="font-bold tracking-wide text-3xl text-orange-600">Pronóstico del clima</h1>
-        <div className="bg-white w-[15rem] overflow-hidden shadow-2xl rounded flex items-center p-2 gap-2">
-          <img className="w-[1.5rem] h-[1.5rem] " src={search} alt="search" />
+      <nav className="w-full p-2 flex flex-col items-center">
+        <div className="w-full flex justify-center">
+          <h1 className="font-bold  text-orange-600 text-center text-3xl">Pronóstico del clima</h1>
+        </div>
+        <div className="w-full flex justify-center mt-2">
           <input
             onKeyUp={(e) => {
               if (e.key === 'Enter') {
@@ -43,16 +44,21 @@ function App() {
             }}
             type="text"
             placeholder="Ciudad.."
-            className="focus:outline-none w-full text-[#212121] text-lg"
+            className="focus:outline-none text-[#212121] rounded w-[13rem] p-2 text-sm mr-1"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-         <button onClick={submitCity} className="bg-blue-600 text-[#ffff] px-4 py-2 rounded-lg">Buscar </button>
+          <button 
+            onClick={submitCity} 
+            className="bg-blue-600 text-white rounded text-sm px-1"
+          >
+            Buscar
+          </button>
         </div>
-       
       </nav>
+      
       <Fondo></Fondo>
-      <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
+      <main className="w-full flex flex-wrap gap-4 py-2 px-[5%] items-center justify-center">
         <Tarjeta
           place={ubicacion}
           windspeed={clima && clima.wind ? clima.wind.speed : null}
@@ -63,7 +69,7 @@ function App() {
           conditions={clima && clima.weather ? clima.weather[0].main : null}
         />
 
-        <div className="flex justify-center gap-8 flex-wrap w-[60%]">
+        <div className="flex justify-center gap-4 flex-wrap w-full lg:w-[50%]">
           {Object.keys(datosPorDia).map((fecha) => (
             <MiniTarjeta
               key={fecha} // Utiliza la fecha como clave única
