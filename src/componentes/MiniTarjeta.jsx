@@ -63,7 +63,7 @@ const MiniTarjeta = ({ time, tempe, iconString }) => {
   }, [time]);
 
   return (
-    <div className="glassCard w-[10rem] h-[10rem] p-4 flex flex-col">
+    <div className="glassCard w-[8rem] h-[10rem] p-4 flex flex-col">
       <p className="text-center">{ translateDayOfWeek(weekday)}</p>
       <hr />
       <div className="w-full flex justify-center items-center flex-1">
