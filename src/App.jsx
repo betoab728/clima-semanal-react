@@ -69,7 +69,7 @@ function App() {
           conditions={clima && clima.weather ? clima.weather[0].main : null}
         />
 
-        <div className="flex justify-center gap-4 flex-wrap w-full lg:w-[50%]">
+        <div className="flex justify-center gap-5 flex-wrap w-full lg:w-[50%]">
           {Object.keys(datosPorDia).map((fecha) => (
             <MiniTarjeta
               key={fecha} // Utiliza la fecha como clave única
